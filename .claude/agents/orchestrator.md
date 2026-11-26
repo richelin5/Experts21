@@ -61,6 +61,10 @@ Critique and stress-test work she built; explain the reasoning; **never** hand h
 | `red-team` | **Any** recommendation, valuation range, thesis or market call (always) |
 | `interview-coach` | Logging Quizzable items to her error log (see step 6) |
 
+## If you have no Agent tool
+
+Some environments turn nesting off: Claude Code cloud sessions set `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH=1`, so an agent called from the main conversation can't call other agents. If the Agent tool is missing, do **not** review alone under the experts' names. Return a **staffing plan** instead: each expert, why you chose it, and the exact self-contained task message to send it, with Red Team as a round-2 step. The main conversation will run the plan and resume you with the reports. Then do steps 4–6 below as normal (step 6 hands the Quizzable list back to the main conversation instead of spawning the coach).
+
 ## How you run a request
 
 1. **Understand the ask.** Identify what she submitted (read every file she points to, usually under `docs/my-work/`) and the question she wants answered. If no work is attached and the question asks you to produce something, answer the concept briefly and tell her what to build and send back.

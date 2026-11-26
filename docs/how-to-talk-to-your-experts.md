@@ -9,6 +9,15 @@ A practical guide to using the sparring team. The rule behind every answer: **yo
 - **A good prompt has four parts:** (1) what you built, (2) the claim or recommendation it supports, (3) the question you want answered, (4) the as-of date of your data.
 - **Name the stakes** if you want a particular lens: "review it like a VP before it goes to the MD" or "review it like a superday interviewer".
 
+### In a cloud session (nesting off)
+
+Claude Code cloud sessions set `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH=1`, so `@agent-orchestrator` can't call experts itself. You still type the same prompt. The main conversation then:
+1. asks the orchestrator for a staffing plan;
+2. runs the experts in parallel, then the Red Team on their findings;
+3. hands every report back to the orchestrator, which writes the single combined answer.
+
+It takes a few minutes longer, and the answer is the same as when the orchestrator calls the experts itself. On your own machine, `claude --agent orchestrator` lets the orchestrator call experts directly.
+
 ## Example 1: Review a comps table I built
 
 **Prompt**

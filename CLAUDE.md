@@ -20,6 +20,14 @@ Every review uses the `sparring-review` format: findings rated Critical / Major 
 | Add or change an agent or skill | `@agent-team-builder add an expert for …` |
 | Use a skill yourself | `/sparring-review`, `/regression-auditor`, `/lbo-review`, … |
 
+**If nesting is off** (cloud sessions set `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH=1`), the orchestrator can't call experts itself. Instructions for the main conversation in that case:
+1. When `@agent-orchestrator` is invoked, run it first to get its staffing plan.
+2. Call the listed experts directly, in parallel. Then call `red-team` with their combined findings.
+3. Resume the orchestrator with every report so it writes the single combined answer.
+4. Call `interview-coach` to queue the new Quizzable items.
+
+On a local machine, `claude --agent orchestrator` runs the orchestrator as the main session, which can call experts directly.
+
 Put your own work in `docs/my-work/` and point the agents at it. The orchestrator is the **Managing Director**: it decides which experts to bring in, runs their reviews in parallel, routes hand-offs and disagreements between them, gets the Red Team's counterargument, and returns **one** combined answer. It then queues the Quizzable items in your error log.
 
 ## The team (`.claude/agents/`)

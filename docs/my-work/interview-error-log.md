@@ -23,6 +23,11 @@ Quizzable items from sparring reviews, waiting to be asked.
 | 2026-11-26 | Elena, comps-test-v1 | Why a Medicare Advantage health plan is not a comp for a provider: payer vs. provider economics, regulated subsidiary cash, plans valued on P/E and P/B |
 | 2026-11-26 | Elena, comps-test-v1 | Calendarizing LTM from a non-December fiscal year: FY + current YTD − prior YTD (Pinnacle: FY Jun-2025 data against Sep-2026 LTM peers) |
 | 2026-11-26 | Elena, comps-test-v1 | Mean vs. median with n = 5, and the size and liquidity adjustment before applying public multiples to a $50mm EBITDA private target |
+| 2026-11-26 | Team review (Victoria), comps-test-v1 | Trading comps = minority, liquid value; precedents = control value; why a sell-side pitch shows comps, precedents and an LBO on one football field |
+| 2026-11-26 | Team review (Victoria), comps-test-v1 | EBITDA basis must match between peers and target: a reported-basis multiple applied to adjusted EBITDA overstates value, and each $1mm of rejected add-back costs about one multiple of EV |
+| 2026-11-26 | Team review (Victoria), comps-test-v1 | Sponsor ability to pay: max leverage = 1/(coverage x rate); less debt means more equity per dollar of EV, so at a fixed IRR the max price falls (at 12x entry, 7% organic growth gives ~13% IRR) |
+| 2026-11-26 | Team review (Victoria), comps-test-v1 | Why ASC operators carry large NCI (physician JVs), and how leaving NCI out of EV understates EV/EBITDA |
+| 2026-11-26 | Team review (Victoria), comps-test-v1 | EV-to-equity bridge for a founder: debt-like items (deferred comp, Medicare overpayment liabilities, earn-outs), working-capital peg, fees and taxes |
 
 ## Session notes
 
