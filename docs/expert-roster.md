@@ -120,6 +120,8 @@ The roster is built as project subagents and skills (usage guide: `CLAUDE.md`):
 - **Skills:** `.claude/skills/<skill-name>/SKILL.md`, one per skill in section 2.2. `regression-auditor` is a byte-identical copy of `docs/my-work/regression-auditor/`; `scripts/check-regression-auditor.sh` verifies this.
 - **Meta agent (not one of the 19 roles):** `team-builder` creates and improves agents and skills, keeps this roster, `CLAUDE.md` and the orchestrator's expert table in sync, and never edits `regression-auditor` unless Richelin explicitly asks.
 - **Error log:** `docs/my-work/interview-error-log.md`, written only by `interview-coach`.
+- **Knowledge folders:** `knowledge/<agent-name>/`, read by each agent before every answer.
+- **Brains and personas:** each agent's `model:` and persona, with reasons, are in `docs/agent-brains.md`.
 
 | Roster role | Agent file |
 |---|---|

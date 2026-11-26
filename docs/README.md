@@ -13,6 +13,8 @@ Research context for a team of expert agents that will support a **US middle-mar
 | 05 | [05-macro-rates-and-deal-activity.md](05-macro-rates-and-deal-activity.md) | Current rates snapshot, transmission channels (discount rate, LBO financing capacity, spreads, equity valuations, labor & reimbursement), bid–ask spread, macro overlay checklist, academic evidence | Macro / strategy agent |
 | 06 | [06-regression-audit.md](06-regression-audit.md) | Auditing regressions: specification, multicollinearity (VIF), heteroskedasticity (BP/White, HC3), omitted-variable bias formula, autocorrelation, stationarity, influence, look-ahead; Python audit function; report template | Quant / model-review agent |
 | — | [expert-roster.md](expert-roster.md) | The 19-agent sparring team (roles, one-line jobs, primary docs) and the 18 shared skills, including reuse of the existing regression auditor | Orchestrator; all agents |
+| — | [agent-brains.md](agent-brains.md) | Each agent's model (opus / sonnet / haiku) and why, plus its persona (name, voice, working style) | Richelin; team-builder |
+| — | [../knowledge/](../knowledge/) | One knowledge folder per agent, read before every answer | All agents |
 | — | [how-to-talk-to-your-experts.md](how-to-talk-to-your-experts.md) | Example prompts for reviews through the orchestrator, single-expert questions, quizzing and the error log | Richelin |
 | — | [my-work/interview-error-log.md](my-work/interview-error-log.md) | Interview Coach's log of missed technicals, queued topics and session notes | Interview coach |
 | — | [my-work/](my-work/README.md) | Richelin's own work the team must build on: her regression auditor skill (SKILL.md + interpretation and decomposition references) | Quant / model-review agent; orchestrator |

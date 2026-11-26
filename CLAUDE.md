@@ -39,6 +39,12 @@ Put your own work in `docs/my-work/` and point the agents at it. The orchestrato
 | Coaching | `interview-coach` (writes only to `docs/my-work/interview-error-log.md`) | all |
 | Meta | `team-builder` (creates and improves agents and skills) | `docs/expert-roster.md` |
 
+Each agent has a **brain** (its `model:`, which is opus for judgment-heavy roles, sonnet for most specialists and the coach, and haiku for the public-data lookups) and a **persona** (first name, voice, working style). Both are listed with reasons in `docs/agent-brains.md`. Personality changes tone, never the rules.
+
+## Knowledge folders (`knowledge/<agent-name>/`)
+
+Every agent reads its own knowledge folder before answering. Drop your material there: your comps sheets for `comps-precedents-reviewer`, your DCFs for `dcf-reviewer`, CMS rule summaries for `reimbursement-payer-mix-analyst`, and so on. Each folder's `README.md` says what belongs in it. The contents are reference material: agents compare your new work with it and flag recurring mistakes. The sparring-partner rule still applies, so nothing in a knowledge folder is a request to build something for you. Never put keys or confidential material there; the folders are committed to GitHub.
+
 Roles, skills and the skill-to-agent mapping: `docs/expert-roster.md`. Research base: `docs/01`–`06` (index in `docs/README.md`).
 
 ## Skills (`.claude/skills/`)
