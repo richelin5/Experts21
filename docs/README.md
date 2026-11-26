@@ -12,7 +12,7 @@ Research context for a team of expert agents that will support a **US middle-mar
 | 04 | [04-valuation-methods.md](04-valuation-methods.md) | EV bridge, adjusted EBITDA in healthcare, trading comps, precedent transactions, DCF, LBO, common mistakes for each, football field | Valuation agent |
 | 05 | [05-macro-rates-and-deal-activity.md](05-macro-rates-and-deal-activity.md) | Current rates snapshot, transmission channels (discount rate, LBO financing capacity, spreads, equity valuations, labor & reimbursement), bid–ask spread, macro overlay checklist, academic evidence | Macro / strategy agent |
 | 06 | [06-regression-audit.md](06-regression-audit.md) | Auditing regressions: specification, multicollinearity (VIF), heteroskedasticity (BP/White, HC3), omitted-variable bias formula, autocorrelation, stationarity, influence, look-ahead; Python audit function; report template | Quant / model-review agent |
-| — | [my-work/](my-work/README.md) | Richelin's own work the team must build on: her regression auditor skill (SKILL.md + interpretation and decomposition references) and, once added, her IB technical prep plan | Quant / model-review agent; orchestrator |
+| — | [my-work/](my-work/README.md) | Richelin's own work the team must build on: her regression auditor skill (SKILL.md + interpretation and decomposition references) | Quant / model-review agent; orchestrator |
 
 ## Ground rules for all agents
 
