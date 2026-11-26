@@ -77,7 +77,7 @@ Where the team's work uses regressions, and therefore this skill:
 | S15 | **`deal-document-review`** | Critique of teasers, CIMs, pitch books and LOI summaries: storyline, investment highlights backed by data, numbers that tie to the model, KPIs disclosed, confidentiality. | Deal Documents | VP, MD, Coverage Banker, Red Team | `01` |
 | S16 | **`buyer-universe-mapping`** | Who buys this asset and why: sponsors (platform vs. add-on appetite, portfolio fit, fund size), strategics (payers, health systems, public operators), and ability to pay. | Sponsor Coverage | Coverage Banker, Market Intelligence, Process & Timeline | `02` |
 | S17 | **`red-team-counterargument`** | Steelmans the opposite case, runs a pre-mortem ("it's a year later and the deal failed: why?"), names the single assumption that would kill the recommendation, and states the other side's walk-away price. | Red Team | MD, VP | `02`, `04`, `05` |
-| S18 | **`technical-quiz-and-error-log`** | Generates interview questions from the team's actual findings (e.g., "walk me through why NCI belongs in EV"), grades the answer, explains the miss, and records it in an error log for spaced repetition. Proposed log location: `docs/my-work/interview-error-log.md`. | Interview Coach | Every reviewing agent tags "quizzable" misses for the coach | `04` + all |
+| S18 | **`technical-quiz-and-error-log`** | Generates interview questions from the team's actual findings (e.g., "walk me through why NCI belongs in EV"), grades the answer, explains the miss, and records it in an error log for spaced repetition. Log: `docs/my-work/interview-error-log.md`. | Interview Coach | Every reviewing agent tags "quizzable" misses for the coach | `04` + all |
 
 ### 2.3 Skills by agent (quick lookup)
 
@@ -112,7 +112,39 @@ Where the team's work uses regressions, and therefore this skill:
 5. **The MD** synthesizes a verdict and the single highest-value fix. The MD gives no rewritten model.
 6. **The Interview Coach** turns the misses into quiz questions, grades her answers, and updates the error log so recurring gaps resurface until they are fixed.
 
-## 4. Coverage of the brief
+## 4. Implementation in Claude Code
+
+The roster is built as project subagents and skills (usage guide: `CLAUDE.md`):
+
+- **Agents:** `.claude/agents/<name>.md`, one per role. The Managing Director's file is `orchestrator.md` (`name: orchestrator`, invoked with `@agent-orchestrator`). It is the only agent with the `Agent` tool, so it is the only agent that calls the other experts. Each agent's `skills:` list preloads exactly the skills in section 2.3.
+- **Skills:** `.claude/skills/<skill-name>/SKILL.md`, one per skill in section 2.2. `regression-auditor` is a byte-identical copy of `docs/my-work/regression-auditor/`; `scripts/check-regression-auditor.sh` verifies this.
+- **Meta agent (not one of the 19 roles):** `team-builder` creates and improves agents and skills, keeps this roster, `CLAUDE.md` and the orchestrator's expert table in sync, and never edits `regression-auditor` unless Richelin explicitly asks.
+- **Error log:** `docs/my-work/interview-error-log.md`, written only by `interview-coach`.
+
+| Roster role | Agent file |
+|---|---|
+| Managing Director | `orchestrator.md` |
+| Vice President | `vice-president.md` |
+| Healthcare Services Coverage Banker | `coverage-banker.md` |
+| Sponsor Coverage Banker | `sponsor-coverage-banker.md` |
+| Market Intelligence Analyst | `market-intelligence-analyst.md` |
+| Process & Timeline Manager | `process-timeline-manager.md` |
+| Deal Documents Reviewer | `deal-documents-reviewer.md` |
+| Accounting & Three-Statement Reviewer | `accounting-reviewer.md` |
+| Comps & Precedents Reviewer | `comps-precedents-reviewer.md` |
+| DCF Reviewer | `dcf-reviewer.md` |
+| LBO Reviewer | `lbo-reviewer.md` |
+| Leveraged Finance / Credit Analyst | `leveraged-finance-analyst.md` |
+| Healthcare Regulatory Reviewer | `healthcare-regulatory-reviewer.md` |
+| Reimbursement & Payer-Mix Analyst | `reimbursement-payer-mix-analyst.md` |
+| Macro & Rates Economist | `macro-rates-economist.md` |
+| Public Data Specialist | `public-data-specialist.md` |
+| Quant Model Reviewer | `quant-model-reviewer.md` |
+| Red Team | `red-team.md` |
+| Interview Coach | `interview-coach.md` |
+| *(meta)* Team Builder | `team-builder.md` |
+
+## 5. Coverage of the brief
 
 | Requested area | Agents |
 |---|---|
