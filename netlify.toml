@@ -1,0 +1,27 @@
+# Netlify builds the sparring-team web app in web/ with no extra settings.
+# Required environment variables (Site configuration > Environment variables):
+#   ANTHROPIC_API_KEY  - used only by the Netlify Functions, never sent to the browser
+#   APP_PASSWORD       - password for the app
+# Optional: DAILY_MESSAGE_LIMIT (30), DAILY_TEAM_LIMIT (5), MAX_TEAM_EXPERTS (4, can only be lowered),
+#           EFFORT_SINGLE (medium), EFFORT_TEAM (low), EFFORT_SYNTHESIS (medium), TICKET_SECRET.
+
+[build]
+  base = "web"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    X-Robots-Tag = "noindex, nofollow"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"

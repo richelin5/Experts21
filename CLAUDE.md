@@ -19,6 +19,7 @@ Every review uses the `sparring-review` format: findings rated Critical / Major 
 | Be quizzed on technicals and track misses | `@agent-interview-coach quiz me`, or run `claude --agent interview-coach` for a back-and-forth session |
 | Add or change an agent or skill | `@agent-team-builder add an expert for …` |
 | Use a skill yourself | `/sparring-review`, `/regression-auditor`, `/lbo-review`, … |
+| Use the team from a browser | The web app in `web/` (deploy steps in `web/README.md`). It is built from these agent, skill, doc and knowledge files at deploy time and never includes `docs/my-work/test-cases/` |
 
 **If nesting is off** (cloud sessions set `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH=1`), the orchestrator can't call experts itself. Instructions for the main conversation in that case:
 1. When `@agent-orchestrator` is invoked, run it first to get its staffing plan.
